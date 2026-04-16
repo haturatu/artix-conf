@@ -1,0 +1,25 @@
+.
+├── README.md
+└── etc
+    ├── docker
+    │   └── daemon.json
+    ├── logrotate.conf
+    ├── logrotate.d
+    │   ├── chrony
+    │   ├── cups
+    │   ├── docker
+    │   ├── nginx
+    │   ├── openrc
+    │   ├── pacman
+    │   └── postgresql
+    ├── pacman.conf
+    ├── pacman.d
+    │   ├── mirrorlist
+    │   └── mirrorlist-arch
+    ├── sysctl.d
+    │   ├── 97_magic_sysrq.conf
+    │   ├── 98_http_opt.conf
+    │   └── 99_bbr.conf
+    └── thinkfan.conf
+
+6 directories, 17 files
