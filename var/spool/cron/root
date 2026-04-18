@@ -1,0 +1,1 @@
+0 3 * * 0 /usr/bin/fstrim -av >> /var/log/fstrim.log 2>&1
