@@ -1,5 +1,14 @@
+$ zgrep ZSWAP /proc/config.gz
+$vim /etc/default/grub
+
+GRUB_CMDLINE_LINUX_DEFAULT='... zswap.enabled=1 zswap.compressor=zstd zswap.max_pool_percent=10 zswap.zpool=z3fold'
+
+$ sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+---------------------------------------------------------------------------
+
 .
-├── README.md
+├── README
 └── etc
     ├── docker
     │   └── daemon.json
@@ -17,9 +26,14 @@
     │   ├── mirrorlist
     │   └── mirrorlist-arch
     ├── sysctl.d
+    │   ├── 93_ipv6_neighbor_cache.conf
+    │   ├── 94_tcp_mtu_probing.conf
+    │   ├── 95_dirty_ratio.conf
+    │   ├── 96_swappiness.conf
+    │   ├── 97_disable_watchdog.conf
     │   ├── 97_magic_sysrq.conf
     │   ├── 98_http_opt.conf
     │   └── 99_bbr.conf
     └── thinkfan.conf
 
-6 directories, 17 files
+6 directories, 22 files
