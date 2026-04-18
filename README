@@ -7,6 +7,18 @@ $ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 ---------------------------------------------------------------------------
 
+modprobe options
+
+ThinkPad
+$ printf 'options thinkpad_acpi fan_control=1\n' | sudo tee /etc/modprobe.d/thinkpad_acpi.conf
+
+Nvidia GPU
+$ printf 'options nvidia NVreg_EnableResizableBar=1\n' | sudo tee /etc/modprobe.d/nvidia-rebar.conf
+$ printf 'blacklist noveau\noptions nouveau modeset=0\n' | sudo tee /etc/modprobe.d/blacklist-nouveau.conf
+
+rebuild initramfs
+$ sudo mkinitcpio -P
+
 .
 ├── README
 └── etc
